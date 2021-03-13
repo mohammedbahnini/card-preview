@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css"
+      integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/brands.min.css"
+      integrity="sha512-dBL5cY4qTt42J1cfabCHTYR7KMztyd+n4t2GhD6EH/MKWJIIHuEYckJ1nHEpTwIaiDkrjzbc6WyiSkdLP+3INQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/regular.min.css"
+      integrity="sha512-1yhsV5mlXC9Ve9GDpVWlM/tpG2JdCTMQGNJHvV5TEzAJycWtHfH0/HHSDzHFhFgqtFsm1yWyyHqssFERrYlenA=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css"
+      integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ=="
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Frontend Mentor | Article preview component</title>
+  </head>
+
+  <body class="d-flex ai-center jc-center">
+    <section class="product-card d-flex">
+      <div class="product-img">
+        <img src="images/drawers.jpg" alt="Drawers        " />
+      </div>
+
+      <div class="card-detail d-flex flex-col">
+        <h1 class="card-title very-dark-color">
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </h1>
+
+        <p class="card-text dark-color">
+          Ever been in a room and felt like something was missing ? Perhaps it
+          felt slightly bare and uninviting . I've got some simple tips to help
+          you make any room feel complete .
+        </p>
+
+        <div class="card-footer d-flex ai-center">
+          <img
+            src="images/avatar-michelle.jpg"
+            alt="Avatar"
+            class="card-avatar"
+          />
+          <div class="card-info d-flex flex-col jc-sb">
+            <h4 class="avatar-name very-dark-color">Michelle Appelton</h4>
+            <p class="publish-date light-color">28 Jun 2020</p>
+          </div>
+
+          <button class="btn-share" data-tooltip-mobile="mobile-tooltip1">
+            <i class="fas fa-share share-icon"></i>
+            <div class="tooltip-share d-flex ai-center jc-sb">
+              <p class="share-text very-light-color">share</p>
+              <a href="#" class="social-link">
+                <img
+                  src="images/icon-facebook.svg"
+                  alt="Facebook"
+                  class="social-icon"
+              /></a>
+              <a href="#" class="social-link">
+                <img
+                  src="images/icon-twitter.svg"
+                  alt="Twitter"
+                  class="social-icon"
+              /></a>
+              <a href="#" class="social-link">
+                <img
+                  src="images/icon-pinterest.svg"
+                  alt="Pinterest"
+                  class="social-icon"
+                />
+              </a>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="tooltip-mobile d-flex ai-center jc-sb" id="mobile-tooltip1">
+        <p class="share-text very-light-color">share</p>
+        <a href="#" class="social-link">
+          <img
+            src="images/icon-facebook.svg"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="#" class="social-link">
+          <img src="images/icon-twitter.svg" alt="Twitter" class="social-icon"
+        /></a>
+        <a href="#" class="social-link">
+          <img
+            src="images/icon-pinterest.svg"
+            alt="Pinterest"
+            class="social-icon"
+          />
+        </a>
+      </div>
+    </section>
+
+    <script>
+      window.onload = function () {
+        const btnShare = document.querySelector(".btn-share");
+        btnShare.onclick = function () {
+          const tooltipID = btnShare.getAttribute("data-tooltip-mobile");
+          const tooltip = document.querySelector(`#${tooltipID}`);
+          tooltip.classList.toggle("active");
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+:root {
+  --very-dark-grayich-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: var(--light-grayish-blue);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.very-dark-color {
+  color: var(--very-dark-grayich-blue);
+}
+
+.dark-color {
+  color: var(--desaturated-dark-blue);
+}
+
+.light-color {
+  color: var(--grayish-blue);
+}
+
+.very-light-color {
+  color: var(--light-grayish-blue);
+}
+
+/* PRODUCT CARD */
+.product-card {
+  background-color: white;
+  border-radius: 1rem;
+  width: 56.15rem;
+  box-shadow: 0.05rem 0.05rem 1rem 0px rgb(0 0 0 / 30%);
+  position: relative;
+}
+
+.product-img {
+  width: 84rem;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.card-detail {
+  padding: 3.07rem;
+}
+
+.card-title {
+  margin-bottom: 1.53rem;
+}
+
+.card-text {
+  margin-bottom: 1.5rem;
+}
+
+.card-info {
+  flex-grow: 1;
+  height: 3.07rem;
+}
+
+.card-avatar {
+  border-radius: 50%;
+  width: 3.07rem;
+  margin-right: 1.5rem;
+}
+
+.btn-share {
+  width: 3.07rem;
+  height: 3.07rem;
+  border: none;
+  background-color: #edf2f7;
+  border-radius: 50%;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+}
+
+.share-icon {
+  font-size: 1.5rem;
+  color: var(--desaturated-dark-blue);
+}
+
+.tooltip-share {
+  background-color: var(--very-dark-grayich-blue);
+  padding: 1.38rem 2.92rem;
+  border-radius: 0.5rem;
+  width: 19.23rem;
+  position: absolute;
+  top: -200%;
+  left: 0;
+  transform: translateX(calc(-50% + 1.535rem));
+  z-index: 2;
+  box-shadow: 0.02rem 0.2rem 0.5rem 0.02rem rgba(0, 0, 0, 0.3);
+  opacity: 0;
+}
+
+.tooltip-share::before {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  top: 100%;
+  left: calc(50% - (2rem) / 2);
+  border: 1rem solid;
+  border-color: transparent;
+  border-top-color: var(--very-dark-grayich-blue);
+}
+
+.share-text {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.tooltip-mobile {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--very-dark-grayich-blue);
+  width: 100%;
+  padding: 2rem 1.53rem;
+  justify-content: flex-start;
+  gap: 2rem;
+  display: none;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.tooltip-mobile.active {
+  transform: translateY(0);
+}
+
+.tooltip-mobile .share-text {
+  color: var(--desaturated-dark-blue);
+  font-size: 1rem;
+}
+
+@media (min-width: 375px) {
+  .btn-share:hover {
+    background-color: var(--desaturated-dark-blue);
+  }
+
+  .btn-share:hover > .share-icon {
+    color: var(--light-grayish-blue);
+  }
+
+  .btn-share:hover .tooltip-share {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 375px) {
+  .tooltip-share {
+    display: none;
+  }
+
+  body {
+    width: 100vw;
+    padding: 0 1.53rem;
+    padding-top: 2rem;
+  }
+
+  .product-card {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .product-img {
+    width: auto;
+  }
+
+  .product-img img {
+    width: 100%;
+    height: 13.07rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .card-detail {
+    padding: 2.69rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .card-title {
+    margin-bottom: 1.3rem;
+  }
+
+  .card-text {
+    margin-bottom: 2.15rem;
+  }
+
+  .btn-share {
+    width: 2.15rem;
+    height: 2.15rem;
+    z-index: 2;
+  }
+
+  .share-icon {
+    font-size: 1rem;
+    color: var(--very-dark-grayich-blue);
+  }
+
+  .card-avatar {
+    border-radius: 50%;
+    width: 2.76rem;
+    margin-right: 1rem;
+  }
+
+  .tooltip-mobile {
+    display: flex;
+  }
+}
